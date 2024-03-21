@@ -14,7 +14,7 @@ const ThePost = () => {
         try {
             const response = await fetch(`https://jsonplaceholder.typicode.com/posts/${id}`);
             const data: Post = await response.json();
-            console.log('fetch');
+
             setPost(data);
 
         } catch (error) {
@@ -23,7 +23,6 @@ const ThePost = () => {
     };
 
     useEffect(() => {
-        console.log(id);
         if (id)
             fetchPosts(id);
     }, [id]);
